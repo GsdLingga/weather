@@ -16,5 +16,4 @@
         $response = "gagal";
     }
     echo $response;
-    echo $request;
 ?>
