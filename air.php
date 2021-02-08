@@ -11,7 +11,7 @@
     $sql = mysqli_query($dbconnect, "INSERT INTO tb_air (tb_air.`latitude`, tb_air.`longitude`, tb_air.`interval`) VALUES ('$lat', '$lng', '$interval')");
     if ($sql) {
         $response = "sukses";
-        $data;
+        echo $data;
     } else {
         $response = "gagal";
     }
