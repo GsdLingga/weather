@@ -4,11 +4,11 @@
     $request = file_get_contents('php://input');
     
     $data = json_decode($request, true);
-    $id = mysqli_real_escape_string($dbconnect, $data['id']);
+    // $id = mysqli_real_escape_string($dbconnect, $data['id']);
     $lat = mysqli_real_escape_string($dbconnect, $data['lat']);
     $lng = mysqli_real_escape_string($dbconnect, $data['lng']);
     $interval = date("Y-m-d h:i:s");
-    $sql = mysqli_query($dbconnect, "INSERT INTO tb_marker VALUES ('$id', '$lat', '$lng', '$interval')");
+    $sql = mysqli_query($dbconnect, "INSERT INTO tb_air ('latitude','longitude','interval') VALUES ($lat', '$lng', '$interval')");
     if ($sql) {
         $response = "sukses";
     } else {
