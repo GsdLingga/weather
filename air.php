@@ -16,4 +16,5 @@
         $response = "gagal";
     }
     echo $response;
+    echo $suhu;
 ?>
