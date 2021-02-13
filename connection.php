@@ -4,9 +4,12 @@
     $password = 'woz1clw96w5rj8ao';
     $dbname = 'f99amrfa27evlgbq';
     
-    $dbconnect = new mysqli($dbhost, $dbuser, $password, $dbname);
+    $dbconnect = mysqli_connect($dbhost, $dbuser, $password, $dbname);
     
-    if ($dbconnect->connect_error) {
-        die('Server Error');
-    }
+    if (mysqli_connect_errno()) {
+		echo "Gagal terhubung MySQL: " . mysqli_connect_error();
+	}
+    // if ($dbconnect->connect_error) {
+    //     die('Server Error');
+    // }
 ?>
