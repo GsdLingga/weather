@@ -13,7 +13,7 @@
 		$response->message = "Kolom isian tidak boleh kosong";
 		die(json_encode($response));
 	} else {
-		$query = mysqli_query($con, "INSERT INTO tb_air (tb_air.`suhu`, tb_air.`kelembaban`, tb_air.`interval`) VALUES('".$temp."','".$hum."','".$interval."')");
+		$query = mysqli_query($dbconnect, "INSERT INTO tb_air (tb_air.`suhu`, tb_air.`kelembaban`, tb_air.`interval`) VALUES('".$temp."','".$hum."','".$interval."')");
 		
 		if ($query) {
 			$response = new emp();
