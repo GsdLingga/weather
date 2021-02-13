@@ -10,6 +10,7 @@
     $interval = date("Y-m-d h:i:s");
     if ($temp == null && $hum == null) {
         echo "Input tidak boleh kosong";
+        echo $request;
     }else{
         $sql = mysqli_query($dbconnect, "INSERT INTO tb_air (tb_air.`suhu`, tb_air.`kelembaban`, tb_air.`interval`) VALUES ('$temp', '$hum', '$interval')");
         if ($sql) {

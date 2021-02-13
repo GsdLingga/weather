@@ -14,8 +14,6 @@ $_devicestatus= array(
 'kelembaban' => $param2,
 );
 
- 
-
 $firebase = new \Firebase\FirebaseLib($url, $token);
 $firebase->update($DEFAULT_PATH, $_devicestatus);
 
