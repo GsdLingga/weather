@@ -7,7 +7,7 @@
     date_default_timezone_set('Asia/Makassar');
     $interval = date("Y-m-d h:i:s");
 	
-	if((empty($suhu) || empty($kelembaban))) {
+	if((empty($temp) || empty($hum))) {
 		$response = new emp();
 		$response->success = 0;
 		$response->message = "Kolom isian tidak boleh kosong";
