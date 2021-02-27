@@ -14,7 +14,7 @@
 	if((empty($id_device) || empty($angin) || empty($temp) || empty($hum) || empty($light) || empty($rain))) {
 		$response = new emp();
 		$response->success = 0;
-		$response->message = "Kolom isian tidak boleh kosong";
+		$response->message = "Kolom isian tidak boleh kosong $angin";
 		die(json_encode($response));
 	} else {
 		$query = mysqli_query($dbconnect, "INSERT INTO tb_angin (tb_angin.`id_device`, tb_angin.`kecepatan_angin`, tb_angin.`suhu`, tb_angin.`kelembaban`, tb_angin.`intensitas_cahaya`, tb_angin.`hujan`, tb_angin.`interval`) VALUES('".$id_device."','".$angin."','".$temp."','".$hum."','".$light."','".$rain."','".$interval."')");
