@@ -17,7 +17,7 @@
 		$response->message = "Kolom isian tidak boleh kosong";
 		die(json_encode($response));
 	} else {
-		$query = mysqli_query($dbconnect, "INSERT INTO tb_angin (tb_air.`id_device`, tb_air.`kecepatan_angin`, tb_air.`suhu`, tb_air.`kelembaban`, tb_air.`intensitas_cahaya`, tb_air.`hujan`, tb_air.`interval`) VALUES('".$id_device."','".$angin."','".$temp."','".$hum."','".$light."','".$rain."','".$interval."')");
+		$query = mysqli_query($dbconnect, "INSERT INTO tb_angin (tb_angin.`id_device`, tb_angin.`kecepatan_angin`, tb_angin.`suhu`, tb_angin.`kelembaban`, tb_angin.`intensitas_cahaya`, tb_angin.`hujan`, tb_angin.`interval`) VALUES('".$id_device."','".$angin."','".$temp."','".$hum."','".$light."','".$rain."','".$interval."')");
 		
 		if ($query) {
 			$response = new emp();
