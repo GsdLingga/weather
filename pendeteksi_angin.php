@@ -22,7 +22,7 @@
 		if ($query) {
 			$response = new emp();
 			$response->success = 1;
-			$response->message = "Data Alat Pendeteksi Air berhasil di simpan";
+			$response->message = "Data Alat Pendeteksi Angin berhasil di simpan";
 			die(json_encode($response));
 		} else{ 
 			$response = new emp();
