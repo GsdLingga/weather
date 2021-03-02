@@ -5,7 +5,6 @@
 	
 	$json = '{"lokasi": [';
 
-	
 	// create looping dech array in fetch
 	while ($row = mysqli_fetch_array($query)){
 
@@ -30,5 +29,5 @@
 	// print json
 	echo $json;
     
-	mysqli_close($con);
+	mysqli_close($dbconnect);
 ?>
