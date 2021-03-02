@@ -31,5 +31,5 @@
 			die(json_encode($response)); 
 		}	
 	}
-	mysqli_close($con);
+	mysqli_close($dbconnect);
 ?>
