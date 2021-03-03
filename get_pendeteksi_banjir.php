@@ -18,6 +18,7 @@
         //     array_push($json, $row);
         // }
 
+        $result = array();
         $row = mysqli_fetch_array($query);
         array_push($result, array(
             "id"=>$row['id'],
