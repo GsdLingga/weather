@@ -2,7 +2,7 @@
 	include_once "connection.php";
 	
     class emp{}
-	$id_device = $_GET ["device"];
+	$id_device = $_GET ["id_device"];
 	
 	if((empty($id_device) )) {
 		$response = new emp();
