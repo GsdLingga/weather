@@ -12,11 +12,22 @@
 	} else {
 		$query = mysqli_query($dbconnect, "SELECT * FROM tb_air WHERE tb_air.`id_device` = $id_device ORDER BY tb_air.`id` DESC LIMIT 1;");
 		
-		$json = array();
+		// $json = array();
 	
-        while($row = mysqli_fetch_assoc($query)){
-            array_push($json, $row);
-        }
+        // while($row = mysqli_fetch_assoc($query)){
+        //     array_push($json, $row);
+        // }
+
+        $row = mysqli_fetch_array($query);
+        array_push($result, array(
+            "id"=>$row['id'],
+            "id_device"=>$row['id_device'],
+            "jarak_air"=>$row['jarak_air'],
+            "suhu"=>$row['suhu'],
+            "kelembaban"=>$row['kelembaban'],
+            "intensitas_cahaya"=>$row['intensitas_cahaya'],
+            "hujan"=>$row['hujan'],
+        ));
         
         echo json_encode($json);
 	}
