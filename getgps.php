@@ -1,7 +1,7 @@
 <?php
 	include_once "connection.php";
 	
-    $query = mysqli_query($dbconnect, "SELECT tb_gps.* FROM tb_gps JOIN tb_device ON tb_gps.`id_device` = tb_device.`id` WHERE tb_gps.`id` IN (SELECT MAX(tb_gps.`id`) FROM tb_gps GROUP BY tb_gps.`id_device`)");
+    $query = mysqli_query($dbconnect, "SELECT tb_gps.`id`,tb_gps.`id_device`, tb_gps.`latitude`, tb_gps.`longitude`, tb_device.`tipe_device` FROM tb_gps JOIN tb_device ON tb_gps.`id_device` = tb_device.`id` WHERE tb_gps.`id` IN (SELECT MAX(tb_gps.`id`) FROM tb_gps GROUP BY tb_gps.`id_device`)");
 	
 	$json = '{"lokasi": [';
 
