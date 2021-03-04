@@ -4,12 +4,12 @@
     class emp{}
 	$id_device = $_GET ["id_device"];
 	
-	if((empty($id_device) )) {
-		$response = new emp();
-		$response->success = 0;
-		$response->message = "Id Device tidak boleh kosong";
-		die(json_encode($response));
-	} else {
+	// if((empty($id_device) )) {
+	// 	$response = new emp();
+	// 	$response->success = 0;
+	// 	$response->message = "Id Device tidak boleh kosong";
+	// 	die(json_encode($response));
+	// } else {
 		$query = mysqli_query($dbconnect, "SELECT * FROM tb_air WHERE tb_air.`id_device` = $id_device ORDER BY tb_air.`id` DESC LIMIT 1;");
 		
 		$json = array();
@@ -33,6 +33,6 @@
         // ));
         
         // echo json_encode(array('result'=>$result));
-	}
+	// }
 	mysqli_close($dbconnect);
 ?>
