@@ -12,13 +12,15 @@
 	} else {
 		$query = mysqli_query($dbconnect, "SELECT * FROM tb_air WHERE tb_air.`id_device` = $id_device ORDER BY tb_air.`id` DESC LIMIT 1;");
 		
-		$json = array();
-	
-        while($row = mysqli_fetch_assoc($query)){
-            array_push($json, $row);
-        }
+		// $json = array();
+        $row = mysqli_fetch_assoc($query);
+        echo json_encode($row);
 
-        echo json_encode($json);
+        // while($row = mysqli_fetch_assoc($query)){
+        //     array_push($json, $row);
+        // }
+
+        // echo json_encode($json);
 
         // $result = array();
         // $row = mysqli_fetch_array($query);
