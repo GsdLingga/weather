@@ -17,7 +17,8 @@
 			"id":"'.str_replace($char,'`',strip_tags($row['id'])).'", 
 			"id_device":"'.str_replace($char,'`',strip_tags($row['id_device'])).'",
 			"lat":"'.str_replace($char,'`',strip_tags($row['latitude'])).'",
-			"lng":"'.str_replace($char,'`',strip_tags($row['longitude'])).'"
+			"lng":"'.str_replace($char,'`',strip_tags($row['longitude'])).'",
+			"tipe_device":"'.str_replace($char,'`',strip_tags($row['tipe_device'])).'"
 		},';
 	}
 
