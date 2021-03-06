@@ -12,13 +12,16 @@
 	} else {
 		$query = mysqli_query($dbconnect, "SELECT * FROM tb_angin WHERE tb_angin.`id_device` = $id_device ORDER BY tb_angin.`id` DESC LIMIT 1;");
 		
-		$json = array();
+		$row = mysqli_fetch_assoc($query);
+		echo json_encode($row);
+
+		// $json = array();
 	
-        while($row = mysqli_fetch_assoc($query)){
-            array_push($json, $row);
-        }
+        // while($row = mysqli_fetch_assoc($query)){
+        //     array_push($json, $row);
+        // }
         
-        echo json_encode($json);
+        // echo json_encode($json);
 	}
 	mysqli_close($dbconnect);
 ?>
