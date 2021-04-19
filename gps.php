@@ -7,7 +7,7 @@
     $lng = $_GET ["lng"];
 	$sender = $_GET ["sender"];
     date_default_timezone_set('Asia/Makassar');
-    $interval = date("Y-m-d h:i:s");
+    $interval = date("Y-m-d H:i:s");
 	
 	if((empty($lat) || empty($lng) || empty($sender))) {
 		$response = new emp();
