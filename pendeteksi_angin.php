@@ -10,7 +10,7 @@
     $rain = $_GET ["hujan"];
 	$sender = $_GET ["sender"];
     date_default_timezone_set('Asia/Makassar');
-    $interval = date("Y-m-d h:i:s");
+    $interval = date("Y-m-d H:i:s");
 	
 	if((empty($id_device) || empty($temp) || empty($hum) || empty($light) || empty($rain) || empty($sender))) {
 		$response = new emp();
