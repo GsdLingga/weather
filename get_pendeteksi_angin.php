@@ -11,7 +11,7 @@
 		die(json_encode($response));
 	} else {
 		$query = mysqli_query($dbconnect, 
-		"SELECT tb_angin.`id_device`, tb_angin.`kecepatan_angin`, tb_angin.`suhu`, tb_angin.`kelembaban`, tb_angin.`intensitas_cahaya`, tb_angin.`hujan`, tb_angin.`interval`, tb_gps.`latitude`, tb_gps.`longitude`
+		"SELECT tb_angin.`id`, tb_angin.`id_device`, tb_angin.`kecepatan_angin`, tb_angin.`suhu`, tb_angin.`kelembaban`, tb_angin.`intensitas_cahaya`, tb_angin.`hujan`, tb_angin.`interval`, tb_gps.`latitude`, tb_gps.`longitude`
 		FROM tb_angin, tb_gps
 		WHERE tb_angin.`id` IN (SELECT MAX(tb_angin.`id`) FROM tb_angin
 		WHERE tb_angin.`id_device` = $id_device)
