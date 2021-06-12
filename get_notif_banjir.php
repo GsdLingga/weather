@@ -3,7 +3,7 @@
 	
     $query = mysqli_query($dbconnect, "SELECT tb_air.`id`,tb_air.`id_device`, tb_air.`jarak_air` FROM tb_air WHERE tb_air.`id` IN (SELECT MAX(tb_air.`id`) FROM tb_air GROUP BY tb_air.`id_device`)");
 	
-	$json = '{"angin": [';
+	$json = '{"air": [';
 
 	// create looping dech array in fetch
 	while ($row = mysqli_fetch_array($query)){
