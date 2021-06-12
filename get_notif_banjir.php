@@ -16,7 +16,7 @@
 		'{
 			"id":"'.str_replace($char,'`',strip_tags($row['id'])).'", 
 			"id_device":"'.str_replace($char,'`',strip_tags($row['id_device'])).'",
-			"kecepatan_angin":"'.str_replace($char,'`',strip_tags($row['kecepatan_angin'])).'"
+			"kecepatan_angin":"'.str_replace($char,'`',strip_tags($row['jarak_air'])).'"
 		},';
 	}
 
