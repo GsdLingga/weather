@@ -10,9 +10,16 @@
 		$response->message = "Id Device tidak boleh kosong";
 		die(json_encode($response));
 	} else {
-		$query = mysqli_query($dbconnect, "SELECT * FROM tb_air WHERE tb_air.`id_device` = $id_device ORDER BY tb_air.`id` DESC LIMIT 1;");
+		$query = mysqli_query($dbconnect, 
+        "SELECT tb_air.`id`, tb_air.`id_device`, tb_air.`jarak_air`, tb_air.`suhu`, tb_air.`kelembaban`, tb_air.`intensitas_cahaya`, tb_air.`hujan`, tb_air.`interval`, tb_gps.`latitude`, tb_gps.`longitude`
+		FROM tb_air, tb_gps
+		WHERE tb_air.`id` IN (SELECT MAX(tb_air.`id`) FROM tb_air
+		WHERE tb_air.`id_device` = $id_device)
+		AND 
+		tb_gps.`id` IN (SELECT MAX(tb_gps.`id`) FROM tb_gps
+		WHERE tb_air.`id_device` = $id_device);");
 		
-		// $json = array();
+        // $json = array();
         $row = mysqli_fetch_assoc($query);
         echo json_encode($row);
 
